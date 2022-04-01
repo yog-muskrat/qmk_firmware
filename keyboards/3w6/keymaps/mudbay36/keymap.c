@@ -42,12 +42,14 @@ const uint16_t PROGMEM lbrc_combo[] = {KC_R, LCTL_T(KC_F), COMBO_END};
 const uint16_t PROGMEM grv_combo[]  = {LCTL_T(KC_F), KC_V, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {KC_U, RCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM quot_combo[] = {RCTL_T(KC_J), KC_M, COMBO_END};
+const uint16_t PROGMEM caps_combo[] = {LSFT_T(KC_D), RSFT_T(KC_K), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
 	COMBO(lbrc_combo, KC_LBRC),
 	COMBO(grv_combo,  KC_GRV),
 	COMBO(rbrc_combo, KC_RBRC),
-	COMBO(quot_combo, KC_QUOT)
+	COMBO(quot_combo, KC_QUOT),
+	COMBO(caps_combo, KC_CAPS)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
