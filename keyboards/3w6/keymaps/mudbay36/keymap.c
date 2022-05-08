@@ -52,6 +52,18 @@ combo_t key_combos[COMBO_COUNT] = {
 	COMBO(caps_combo, KC_CAPS)
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LSFT_T(KC_D):
+        case LCTL_T(KC_F):
+        case RCTL_T(KC_J):
+        case RSFT_T(KC_K):
+            return TAPPING_TERM - 20;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ALPHA] = LAYOUT(
     KC_Q,           KC_W,           KC_E,           KC_R,           	KC_T,				/*|*/	KC_Y,   			KC_U,	        	KC_I,           KC_O,           KC_P,
