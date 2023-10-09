@@ -14,6 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include "wait.h"
 #include "host.h"
 #include "report.h"
 #include "debug.h"
@@ -292,6 +293,11 @@ void send_keyboard_report(void) {
         memcpy(&last_report, keyboard_report, sizeof(report_keyboard_t));
         host_keyboard_send(keyboard_report);
     }
+#endif
+
+#if (KEYBOARD_MOD_PACKET_DELAY > 0)
+    // Wait for a fixed amount of time to allow the host to process the report
+    wait_ms(KEYBOARD_MOD_PACKET_DELAY);
 #endif
 }
 

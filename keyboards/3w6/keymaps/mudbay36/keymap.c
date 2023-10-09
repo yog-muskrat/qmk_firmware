@@ -33,7 +33,7 @@ enum layers
 	TD_SFT_F11
 };
 
- qk_tap_dance_action_t tap_dance_actions[] = {
+ tap_dance_action_t tap_dance_actions[] = {
  	[TD_ALTF4] 		= ACTION_TAP_DANCE_DOUBLE(KC_ESC, LALT(KC_F4)),
  	[TD_SFT_F11] 	= ACTION_TAP_DANCE_DOUBLE(KC_F11, LSFT(KC_F11))
 };
